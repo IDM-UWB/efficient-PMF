@@ -489,7 +489,7 @@ for mc = 1:1:MC
 
         gridBoundWant = sqrt(eigVal)*sFactor; % Wanted boundaries of pred grid
         gridBoundWantCorners = boxvertex(nx,gridBoundWant); % Corners for 4D cube normal cube
-        gridBoundWantCorners = (gridBoundWantCorners'*eigVect)' + predMeanEst; % Wanted corner of predictive grid
+        gridBoundWantCorners = (gridBoundWantCorners'*eigVect')' + predMeanEst; % Wanted corner of predictive grid
         gridBoundWantCorners = inv(F)*gridBoundWantCorners; % Back to filtering space
         maxF = max(gridBoundWantCorners,[],2); % Min/Max meas corners
         minF = min(gridBoundWantCorners,[],2);
